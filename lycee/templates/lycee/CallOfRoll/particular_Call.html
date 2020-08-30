@@ -1,0 +1,20 @@
+{% extends "master.html" %}
+
+{% if liste %}
+    {% block title %}
+        <h3>Create particular Call Of Roll</h3>
+    {% endblock %}
+
+    {% block content %}
+        <div class="container">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <a type="cancel" href="/lycee/" class="btn btn-danger">Cancel</a>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    {% endblock %}
+{% else %}
+     <p>No student to show.</p>
+{% endif %}a

@@ -1,0 +1,17 @@
+{% extends "master.html" %}
+
+{% if liste %}
+    {% block title %}
+        <h3>List Call of Roll</h3>
+    {% endblock %}
+
+    {% block content %}
+    <ul class="list-group col-md-6">
+        {% for callofroll in liste %}
+           <a href="/lycee/detail_Call/{{callofroll.id}}" class="list-group-item list-group-item-action">{{callofroll.date}} {{callofroll.cursus}}</a>
+        {% endfor %}
+    </ul>
+    {% endblock %}
+{% else %}
+     <p>No Call of Roll to show.</p>
+{% endif %}
